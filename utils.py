@@ -11,7 +11,7 @@ def get_model_and_tokenizer(model_name):
     if model_name not in _model_cache:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForCausalLM.from_pretrained(
-            model_name, torch_dtype=torch.float16, device_map="auto"
+            model_name, torch_dtype=torch.float16, device_map="auto", offload_folder="./offload"
         )
         _model_cache[model_name] = (model, tokenizer)
     return _model_cache[model_name]

@@ -16,7 +16,7 @@ def get_model_and_tokenizer(model_name):
         _model_cache[model_name] = (model, tokenizer)
     return _model_cache[model_name]
 
-def generate_response(prompt, model_name=DEFAULT_MODEL_NAME, max_new_tokens=1000, temperature=0.7, top_p=0.9):
+def generate_response(prompt, model_name=DEFAULT_MODEL_NAME, max_new_tokens=1024, temperature=0.7, top_p=0.9):
     """
     Generate a response from a language model given a prompt.
     """
